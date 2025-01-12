@@ -5,7 +5,7 @@ export default function Footer() {
   flex justify-between"
     >
       <div>Pot Pot Pottery</div>
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-4 text-[--font-gray]">
         <a
           href="https://instagram.com/potpotpottery"
           target="_blank"
