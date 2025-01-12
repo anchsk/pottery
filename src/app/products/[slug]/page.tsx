@@ -1,3 +1,4 @@
+export const dynamicParams = false;
 import ProductPage from '@/ui/product-page';
 
 export function generateStaticParams() {
