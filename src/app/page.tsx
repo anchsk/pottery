@@ -1,6 +1,9 @@
 import Homepage from '@/ui/homepage';
-import Image from 'next/image';
 
 export default function Home() {
-  return <Homepage />;
+  return (
+    <div className="w-full">
+      <Homepage />
+    </div>
+  );
 }

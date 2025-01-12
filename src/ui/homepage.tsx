@@ -2,10 +2,10 @@ import Link from 'next/link';
 import ProductGrid from './product-grid';
 
 export default function Homepage() {
-  const products = Array.from({ length: 6 }, (_, i) => i + 1);
+  const products = Array.from({ length: 3 }, (_, i) => i + 1);
 
   return (
-    <div className="w-full">
+    <>
       <ProductGrid products={products} />
       <Link
         href="/products"
@@ -13,6 +13,6 @@ export default function Homepage() {
       >
         Discover more
       </Link>
-    </div>
+    </>
   );
 }
