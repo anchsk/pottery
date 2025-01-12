@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-gray: rgb(153, 153, 153);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,9 +18,21 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 
 ._b {
   border: 1px solid red;
+}
+
+a {
+  transition: opacity 0.15s ease-out;
+  opacity: 1;
+}
+a:hover {
+  opacity: 0.65;
 }

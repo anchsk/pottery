@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '../globals.css';
 import Footer from '@/ui/footer';
 import Header from '@/ui/header';
 
@@ -22,8 +22,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased flex flex-col min-h-svh">
         {modal}
-        <Header />
-        <main className="grow">{children}</main>
+        <div className="grow">{children}</div>
         <Footer />
       </body>
     </html>
