@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product?: ProductType }) {
       scroll={false}
     >
       <div className="relative w-full h-full block">
-        <ImageMedia asset={product.mainImage?.asset} />
+        <ImageMedia asset={product.mainImage?.asset} sizes="(max-width: 768px) 100vw, 30vw" />
       </div>
       <div
         className="absolute bottom-0 left-0 right-0
