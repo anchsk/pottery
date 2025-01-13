@@ -3,14 +3,18 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SyntheticEvent } from 'react';
+import { AssetType } from '@/types/all-types';
+import { imageLoader } from 'next-sanity/image';
 
 type ImageMediaPropsType = {
-  imageSrc?: string;
+  asset?: AssetType;
   sizes?: string;
 };
 
 export default function ImageMedia(props: ImageMediaPropsType) {
-  const { imageSrc, sizes } = props || {};
+  const { asset, sizes } = props || {};
+  if (!asset) return;
+
   const { contextSafe } = useGSAP();
 
   const defaultFadeIn = contextSafe(
@@ -20,7 +24,6 @@ export default function ImageMedia(props: ImageMediaPropsType) {
       gsap.to(img, {
         opacity: 1,
         duration: 0.5,
-        // delay: Math.random(),
         ease: 'power4.in',
       });
     }
@@ -30,11 +33,12 @@ export default function ImageMedia(props: ImageMediaPropsType) {
       className="block w-full h-full object-cover max-h-full"
       sizes={sizes ? sizes : '50vw'}
       style={{ opacity: 0 }}
-      src={imageSrc ? imageSrc : `/images/01.jpg`}
+      src={asset?.url ? asset.url : `/images/01.jpg`}
       alt={''}
-      width={1200}
-      height={900}
+      width={asset?.width ? asset.width : 1000}
+      height={asset?.height ? asset.height : 1000}
       onLoad={defaultFadeIn}
+      loader={imageLoader}
     />
   );
 }
