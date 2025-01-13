@@ -39,13 +39,13 @@ export function Modal({ children }: { children: React.ReactNode }) {
   return (
     <div
       ref={modalRef}
-      className="_modal fixed top-0 left-0 right-0 bottom-0 w-full h-svh bg-white/50 z-20"
+      className="_modal fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-white/50 z-20"
       style={{ opacity: 0 }}
     >
-      <button className="_back-button fixed right-0 top-0 p-4 cursor-pointer" onClick={closeModal}>
+      <button className="_back-button fixed right-0 top-0 p-4 cursor-pointer z-30" onClick={closeModal}>
         Close
       </button>
-      <div className="_modal-content bg-white h-svh overflow-scroll scrollbar-hide" style={{ opacity: 1 }}>
+      <div className="_modal-content bg-white h-full overflow-scroll scrollbar-hide" style={{ opacity: 1 }}>        
         {children}
       </div>
     </div>
