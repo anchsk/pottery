@@ -31,4 +31,12 @@ export const productPageQuery = groq`*[_type == "product" && slug.current == $sl
 
 export const productsPageQuery = groq`*[_type == "product"]{
     ${productProjection}
-}`
+}`;
+
+export const productPathsQuery = groq`*[_type == "product" && defined(slug.current)][]{
+    "params": { "slug": slug.current }
+  }`;
+
+export const productBySlugQuery = groq`*[_type == "product" && slug.current == $slug][0]{ 
+    ${productProjection}
+  }`;

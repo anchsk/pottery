@@ -1,7 +1,10 @@
+import { ProductType } from '@/types/all-types';
 import ProductGrid from './product-grid';
 
-export default function ProductsPage(props: { products?: Array<any> }) {
-  const products = Array.from({ length: 20 }, (_, i) => i + 1);
-
+export default function ProductsPage({
+  products,
+}: {
+  products?: ProductType[];
+}) {
   return <ProductGrid products={products} />;
 }

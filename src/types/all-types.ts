@@ -22,3 +22,5 @@ export type HomepageType = {
   products?: ProductType[];
   linkText?: string;
 };
+
+export type ProductsPageType = ProductType[]

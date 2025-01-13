@@ -1,9 +1,16 @@
-export const dynamicParams = false;
-import ProductPage from '@/ui/product-page';
+//export const dynamicParams = false;
+export const dynamic = 'force-dynamic';
 
-export function generateStaticParams() {
-  const slugs = Array.from({ length: 20 }, (_, i) => i + 1);
-  return slugs.map((slug, i) => ({ slug: slug.toString() }));
+import { client } from '@/sanity/lib/client';
+import { productBySlugQuery, productPathsQuery } from '@/sanity/lib/queries';
+import { sanityFetch } from '@/sanity/lib/sanity.fetch';
+import { ProductType } from '@/types/all-types';
+import ProductPage from '@/ui/product-page';
+import { notFound } from 'next/navigation';
+
+export async function generateStaticParams() {
+  const products = await client.fetch(productPathsQuery);
+  return products;
 }
 
 export default async function Page({
@@ -11,10 +18,16 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const slug = (await params).slug;
+  const product = await sanityFetch<ProductType>({
+    query: productBySlugQuery,
+    params: await params,
+  });
+  if (!product) {
+    notFound();
+  }
   return (
     <div className="w-full">
-      <ProductPage slug={slug} />
+      <ProductPage product={product} />
     </div>
   );
 }
