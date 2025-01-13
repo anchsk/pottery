@@ -30,6 +30,11 @@ export const homepage = defineType({
         },
       ],
     }),
+    defineField({
+      name: 'linkText',
+      type: 'string',
+      title: 'Archive link text',
+    }),
   ],
   preview: {
     prepare() {

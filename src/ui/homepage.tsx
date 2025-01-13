@@ -1,19 +1,23 @@
 import Link from 'next/link';
 import ProductGrid from './product-grid';
 import Hero from './hero';
+import { HomepageType } from '@/types/all-types';
 
-export default function Homepage() {
-  const products = Array.from({ length: 3 }, (_, i) => i + 1);
-
+export default function Homepage({
+  homepageData,
+}: {
+  homepageData?: HomepageType;
+}) {
+  const { hero, products, linkText } = homepageData || {};
   return (
     <>
-      <Hero /> 
+      <Hero hero={hero} />
       <ProductGrid products={products} />
       <Link
         href="/products"
         className="mx-auto mb-36 md:mb-52 block w-fit px-4 p-2 my-4"
       >
-        Discover more
+        {linkText ? linkText : 'Discover more'}
       </Link>
     </>
   );
