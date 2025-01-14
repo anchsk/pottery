@@ -3,8 +3,6 @@ import ImageMedia from './image-media';
 import { ProductType } from '@/types/all-types';
 import { euro } from '@/utils';
 
-
-
 export default function ProductCard({ product }: { product?: ProductType }) {
   if (!product) return;
 
@@ -19,7 +17,7 @@ export default function ProductCard({ product }: { product?: ProductType }) {
       </div>
       <div
         className="absolute bottom-0 left-0 right-0
-        flex flex-col p-4 z-10"
+        flex flex-col p-4 z-10 text-black"
       >
         {product.title && <div>{product.title}</div>}
         {product.price && <div>{euro.format(product.price)}</div>}
