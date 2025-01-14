@@ -11,7 +11,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
   const { contextSafe } = useGSAP();
 
   const closeModal = contextSafe(
-    (e: SyntheticEvent<HTMLButtonElement, Event>) => {
+    () => {
       gsap.to(modalRef.current, {
         yPercent: -30,
         opacity: 0,

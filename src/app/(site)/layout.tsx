@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import '../globals.css';
 import Footer from '@/ui/footer';
-import Header from '@/ui/header';
 
 export const metadata: Metadata = {
   title: 'Pot Pot Pottery',

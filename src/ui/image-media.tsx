@@ -13,7 +13,6 @@ type ImageMediaPropsType = {
 
 export default function ImageMedia(props: ImageMediaPropsType) {
   const { asset, sizes } = props || {};
-  if (!asset) return;
 
   const { contextSafe } = useGSAP();
 

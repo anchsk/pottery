@@ -1,6 +1,6 @@
 import { ConfigContext } from 'sanity';
-import { StructureBuilder } from 'sanity/structure';
-import { DocumentIcon, DocumentsIcon, HomeIcon } from '@sanity/icons';
+import { ListItemBuilder, StructureBuilder } from 'sanity/structure';
+import { HomeIcon } from '@sanity/icons';
 
 export const structure = (S: StructureBuilder, context: ConfigContext) => {
   const currentDataset = context?.dataset;
@@ -15,11 +15,11 @@ export const structure = (S: StructureBuilder, context: ConfigContext) => {
 
       // Filter
       ...S.documentTypeListItems().filter(
-        (listItem: any) =>
+        (listItem: ListItemBuilder) =>
           ![
             // Singletons
             'homepage',
-          ].includes(listItem.getId())
+          ].includes(listItem.getId() as string)
       ),
     ]);
 };
