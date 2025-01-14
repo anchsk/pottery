@@ -20,11 +20,12 @@ export default function ProductPage(props: {
         className={clsx(
           '_image-container block relative aspect-[0.7] md:h-full mx-auto',
           {
-            'w-full h-[unset] md:w-[unset] ': isModal
+            /* 'w-full h-[unset] md:w-[unset] ': isModal */ // <-- image on mobile fits the width but might not fit the small screen
+            'max-h-[70svh] w-auto h-[unset] md:max-h-[unset] md:w-[unset] ': isModal
           }
         )}
       >
-        <ImageMedia asset={product?.mainImage?.asset}/>
+        <ImageMedia asset={product?.mainImage?.asset} sizes='(max-width: 768px) 100vw, 50vw'/>
       </div>
 
       <div
