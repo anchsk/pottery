@@ -15,7 +15,7 @@ export default function Homepage({
       <ProductGrid products={products} />
       <Link
         href="/products"
-        className="mx-auto mb-36 md:mb-52 block w-fit px-4 p-2 my-4"
+        className="mx-auto mb-28 md:mb-52 block w-fit px-4 p-2 my-4"
       >
         {linkText ? linkText : 'Discover more'}
       </Link>
