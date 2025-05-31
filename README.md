@@ -1,6 +1,9 @@
 ## Website
 ## [https://pottery-one.vercel.app](https://pottery-one.vercel.app)
 
+## About
+
+Pottery is a website for showcasing pottery products. Built with Next.js and Sanity, it features a customizable homepage, dynamic product pages, and a fully integrated Sanity Studio for content management. It also includes smooth page transition animations for an enhanced browsing experience.
 
 ## Sanity Studio
 
